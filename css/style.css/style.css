@@ -1,0 +1,47 @@
+  body{
+            background-color: coral;
+            width: 50%;
+            height: auto;
+            margin: auto;
+            padding: 20px;
+        
+            
+        }
+        .child1{
+            background-color: aqua;
+            padding: 5%;
+            margin: auto;
+            margin-top: 5%;
+            font-family: cursive;
+        }
+        .child2{
+            background-color: skyblue;
+            padding: 5%;
+            margin: auto;
+            margin-top: 5%;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+
+        }
+        .child3{
+            background-color: blueviolet;
+            padding: 5%;
+            margin: auto;
+            margin-top: 5%;
+            font-family: monospace;
+        }
+        .child4{
+            background-color: lightgray;
+            padding: 5%;
+            margin: auto;
+            margin-top: 5%;
+            font-family: sans-serif;
+
+        }
+        .child5{
+            background-color: lightgoldenrodyellow;
+            padding: 5%;
+            margin: auto;
+            margin-top: 5%;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+    
