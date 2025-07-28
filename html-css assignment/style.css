@@ -1,0 +1,42 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color:lightslategray; 
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+#header{
+    background-color: lightslategray;
+}
+#admin-dashboard{
+    width: 100%;
+    height: auto;
+    background-color:  #eceff4; 
+}
+.admin-image{
+        width: 100%;
+        height: auto;
+}
+.header{
+    width: 100%;
+    height: auto;
+    background-color:lightslategray ;
+
+}
+.sidebar-links li{
+    text-decoration: none;
+    list-style: none;
+    padding: 8px 2px;
+    font-size: 17px;
+}
+.sidebar-links a{
+    text-decoration: none;
+    font-weight: 500;
+    color: black;
+}
+.table{
+    
+    padding: 10px;
+    word-spacing: 20px; 
+    margin: 10px;
+}

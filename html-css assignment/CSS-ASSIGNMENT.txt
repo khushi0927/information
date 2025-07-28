@@ -1,0 +1,146 @@
+1)  What is CSS? How does it differ from HTML?
+-> CSS stands for Cascading Style Sheets.
+-> It is a stylesheet language used to describe the presentation (look and feel) of a web page written in HTML.
+
+
+    Difference Between CSS and HTML
+Feature              	HTML	                                                 CSS
+Full Form       	HyperText Markup Language	                          Cascading Style Sheets
+Purpose         	Structures content on the web	                      Styles and formats that content
+Function	        Adds elements (e.g., paragraphs, images, links)	      Adds styles (e.g., color, font size)
+File Type	        .html	                                               .css
+Syntax	Uses tags   (<p>, <img>)	                                       Uses selectors (p, .class) and rules (color: red;)
+Example	            <h1>Hello</h1>	                                       h1 { color: blue; }
+
+
+2) Explain the three way stoapply CSS to a web page.
+->
+         1. Inline CSS
+            CSS is added directly inside an HTML element using the style attribute.
+
+             Example:
+
+            <p style="color: blue; font-size: 18px;">This is a blue paragraph.</p>
+
+
+        2. Internal CSS
+            CSS is written within a <style> tag inside the <head> section of the HTML file.
+
+             Example:
+
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <style>
+                        p {
+                            color: green;
+                            font-size: 18px;
+                        }
+                    </style>
+                    </head>
+                    <body>
+                        <p>This is a green paragraph.</p>
+                    </body>
+                </html>
+
+
+        3. External CSS
+             CSS is written in a separate file (usually with a .css extension) and linked to the HTML file using the <link> tag.
+
+             Example:
+                HTML (index.html):
+
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <link rel="stylesheet" href="styles.css">
+                </head>
+                <body>
+                    <p>This is styled with external CSS.</p>
+                </body>
+                </html>
+
+        CSS (styles.css):
+
+            p {
+                    color: red;
+                    font-size: 20px;
+            }
+
+        
+3)  What are CSS selectors? List and describe the different types of selectors.
+->  What are CSS Selectors?
+    CSS selectors are patterns used to target and select HTML elements that you want to style.
+
+    Selectors tell the browser which elements a set of CSS rules should apply to.
+
+     Types of CSS Selectors:
+
+             1. Element Selector
+                - Targets elements by their tag name.
+
+                    p {
+                            color: blue;
+                    }
+
+
+            2. Class Selector (.classname)
+                - Selects all elements with a specific class attribute.
+
+                    .box {
+                             border: 1px solid black;
+                        }
+
+
+            3. ID Selector (#id)
+                - Targets a single, unique element by its ID.
+
+                    #header {
+                                 background-color: gray;
+                            }
+
+
+            4. Universal Selector (*)
+                - Selects all elements on the page.
+
+                    * {
+                        margin: 0;
+                        padding: 0;
+                    }
+
+
+            5. Group Selector
+                - Applies the same style to multiple selectors.
+
+                    h1, h2, p {
+                         font-family: Arial;
+                        }
+
+
+
+4) What is the box model in CSS? Explain its components.
+->  The CSS Box Model is a fundamental concept that describes how every HTML element is essentially a rectangular box, and how spacing and sizing are applied to that box.
+
+    It defines how elements are rendered and how space is allocated around them.
+
+
+     1. Content
+            The actual content inside the element (text, images, etc.)
+
+            Size is set by width and height
+
+
+    2. Padding
+            Space inside the border, between content and border
+
+            Increases the clickable or readable area without affecting layout
+
+     3. Border
+            A line around the padding and content
+
+            Can have style, width, and color
+
+     4. Margin
+            Space outside the border, used to create space between elements
+
+            Affects element's position relative to others

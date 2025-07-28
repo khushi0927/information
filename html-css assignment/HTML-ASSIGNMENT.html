@@ -1,0 +1,197 @@
+1) What is HTML ? Explain it's structure.
+-> HTML is stands for Hyper Text Markup Language.
+-> it is a standard markup language used to create and design pages on world wide web
+
+->  STRUCTURE
+
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Document</title>
+            </head>
+            <body>
+                <h1>this is heading</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, suscipit! Incidunt cupiditate dicta voluptates similique distinctio et sunt quisquam. Placeat doloribus nostrum enim aliquam tempore minus assumenda optio sequi iste!</p>
+            </body>
+            </html>
+
+
+ 2)  Describe the purpose of HTML tags and provide examples of commonly used tags.
+ -> Hyper Text Markup Language is commonly used in the structure tags on web page.
+
+ -> commonly used tags and their purpose.
+
+            1) <html></html>
+                 define the root of html document.
+                 EX.
+                    <html>
+                        content..........
+                    </html>
+
+
+            2) <head></head>
+                Contains metadata and links to stylesheets or scripts.
+                EX. 
+                    <head>
+                        <title>Website name</title>
+                    </head>
+
+
+            3) <title></title>
+                Sets the title of the web page (it is shown in browser tab).
+                EX.
+                    <title>Website name</title>
+
+
+            4) <body></body>
+                Contains the main content of the web page.
+                EX.
+                    <body>
+                        website's visible content
+                    </body>
+
+
+            5) <h1></h1> TO <h6></h6>
+                Headings, from largest (<h1>) to smallest (<h6>).
+                EX.
+                    <h1>Heading</h1>
+                    <h2>Heading</h2>
+                    <h3>Heading</h3>
+                    <h4>Heading</h4>
+                    <h5>Heading</h5>
+                    <h6>Heading</h6>
+
+            
+            6) <p></p>
+                paragraph text.
+                EX. 
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate repellat velit temporibus itaque. Voluptates facilis placeat molestias esse. Possimus, corporis aliquid. Nemo velit cum reprehenderit modi deserunt voluptatibus nisi magni!</p>
+
+
+            7) <a></a>
+                hyperlink to another page or location.
+                EX.
+                    <a href="https://example.com">visit example</a>
+
+
+            8) <img>
+                Embeds an image (self-closing tag).
+                EX.
+                    <img src="imag.jpg" alt="">
+
+
+            9) <div></div>
+                Generic container for layout and styling purposes.
+                EX.
+                    <div class="container">contain is here</div>
+
+
+
+            10) <ol></ol>,<ul></ul> AND <li></li>
+                Unordered (<ul>) and ordered (<ol>) lists with list items (<li>).
+                EX.
+                    <ul>
+                        <li>Apple</li>
+                        <li>guavava</li>
+                        <li>graps</li>
+                    </ul>
+                    
+3)  What are the differences between block-level and inline elements? Give examples of each.
+->  Block-level and inline elements are two fundamental types of elements that determine how content is displayed on a web page.
+
+                    || Block-Level Elements ||
+                        -Start on a new line.
+
+                        -Take up the full width available (by default).
+
+                        -Often used for structuring a page.
+
+                        -Can contain other block-level or inline elements.
+
+                     --Examples--
+                        - <div> – generic container
+
+                        - <p> – paragraph
+
+                        - <h1> to <h6> – headings
+
+                        - <ul> and <ol> – lists
+
+                        - <li> – list items
+
+                        - <section>, <article>, <header>, <footer>
+
+                            --Example code--
+
+                                <p>This is a paragraph.</p>
+                                    <div>
+                                        <h2>Heading inside a div</h2>
+                                        <p>Another paragraph.</p>
+                                    </div>
+
+                                   || Inline Elements ||
+                                        - Do not start on a new line.
+
+                                        - Only take up as much width as necessary.
+
+                                        - Typically used for formatting small chunks of content inside block-level elements.
+
+                                        - Can only contain text or other inline elements.
+
+                                    
+                                         --Examples--
+                                            - <span> – generic inline container
+
+                                            - <a> – hyperlinks
+
+                                            - <strong> – bold text
+
+                                            - <em> – italic text
+
+                                            - <img> – image
+
+                                            - <br> – line break
+
+                                            --Example code--
+
+                                                <p>This is <strong>bold</strong> and <em>italic</em> text inside a paragraph.</p>
+                                                <a href="#">Click here</a> to visit the site.
+
+
+
+4)  Explain the concept of semantic HTML and why it is important.
+-> What is semantic HTML ??
+            Semantic HTML refers to the use of HTML tags that convey the meaning or purpose of the content inside them, rather than just how it should look.
+
+             --Why is Semantic HTML Important?--
+            
+            1) Improves Readability (for Developers)
+                Code is easier to understand and maintain.
+
+                Example:
+                    <section>
+                        <h2>Blog Post</h2>
+                        <article>
+                        <h3>Post Title</h3>
+                        <p>Post content...</p>
+                        </article>
+                    </section>
+
+            2) Enhances SEO (Search Engine Optimization)
+                    - Search engines better understand the structure and meaning of content.
+
+                    -Helps with ranking in search results.
+
+            3) Accessibility
+                    - Screen readers and assistive technologies can navigate and interpret the page more accurately.
+
+                    - Example: <nav> signals a navigation menu, improving experience for visually impaired users.
+
+            4) Consistency Across Browsers
+                    - Semantic tags offer consistent behavior and default styles across modern browsers.
+
+            5) Supports Better Web Standards
+                    - Encourages clean, standardized code that works well on all devices.
+

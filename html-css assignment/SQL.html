@@ -1,0 +1,75 @@
+                            Create Multiple Tables and SQL Queries
+                        
+                || CREATE TABLE ||
+
+Create table tbl_bookappoinment(
+    id int auto increment primary key ,
+    name varchar(255) , 
+    age int ,
+    weight int ,
+    phone bigint ,
+    deases varchar(255) ,
+    appoinment_date varchar(255)
+);
+
+                          
+
+                        || INSERT DATA ||
+
+insert into tbl_bookappoinment values ('null','khushi','19','50','7984936343','headache','19-7-2025'),('null','shreya','19','53','7984876343','stomachache','20-7-2025'),('null','priya','19','52','7984936343','fever','20-7-2025'),('null','hasti','19','53','7984936343','headache','21-7-2025');
+
+
+                            || UPDATE ||
+
+        update tbl_bookappoinment set name='krisha',age='18',weight='49',phone='7989936343',deases='headache',appoinment_date='19-7-2025' where id=5;
+
+                            || DELETE ||
+
+            delete from tbl_bookappoinment;
+
+            delete from tbl_bookappoinment where id=1;
+
+            delete from tbl_bookappoinment where name='khushi';
+
+            delete from tbl_bookappoinment where id between 1 and 4;
+
+            delete from tbl_bookappoinment where id in(2,4);
+
+
+                || SELECT QUERY ||
+
+         select all data
+    EX. select * from tbl_bookappoinment;
+   
+         select particular data from name
+    EX. select *from tbl_bookappoinment where name='khushi';
+
+         select particular data from id 
+    EX. select * from tbl_bookappoinment whare id=2;
+
+        select * from tbl_bookappoinment where id in(1,3);
+
+        select * from tbl_bookappoinment where id between 1 and 10;
+
+                            || LIMIT ||
+
+        select * from tbl_bookappoinment where id limit 1,4;
+
+
+                            || LIKE ||
+
+            select * from tbl_bookappoinment where name like 'i%';
+
+            select * from tbl_bookappoinment where name like '%i';
+
+            select * from tbl_bookappoinment where name like '%i%';
+
+
+                            || GROUP BY ||
+                        
+            select sum(age),department from tbl_bookappoinment group by department;
+
+
+                            || SUB QUERY ||
+
+            select max(age) as second_highest_age from tbl_bookappoinment where age < (select max(age) from tbl_bookappoinment);
