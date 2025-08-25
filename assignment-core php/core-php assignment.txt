@@ -1,0 +1,133 @@
+                                      | Module-1 Core-PHP |
+
+         PHP SYNTAX :
+
+
+    1]  Discuss the structure of a PHP script and how to embed PHP in HTML.
+    ->  Basic structure
+                <?PHP
+                    echo"khushi";
+                ?>
+
+
+    ->    embeding PHP in HTML
+                <!DOCTYPE html>
+                            <html>
+                            <head>
+                                <title>PHP in HTML</title>
+                            </head>
+                            <body>
+                                <h1>Welcome!</h1>
+                                <p>
+                                    <?php
+                                        echo"khushi";
+                                    ?>
+                                </p>
+                            </body>
+                            </html>
+
+
+    2] Rules for Naming Variables in PHP.
+    ->  Variable names are case-sensitive.
+    ->  The first character after $ must be a letter (a–z, A–Z) or underscore (_).
+    ->  After the first character, you can use letters, numbers, and underscores.
+    ->  Must begin with a $ sign.
+    ->  Cannot use reserved keywords as variable names.
+
+
+
+        PHP VARIABLES :
+
+    1] Explain the concept of variables in PHP and their scope.
+
+    ->  1. Concept of Variables in PHP
+
+    ->    A variable in PHP is a container that stores data, which can be used and changed during program execution.
+
+    ->    Key Points about Variables
+
+    ->  Always start with $.
+
+    ->  Value can change (hence called variable).
+
+    ->  No need to declare type (PHP is loosely typed).
+
+
+    ->  2. Scope of Variables in PHP.
+
+    (a) Local Scope :
+
+           -> Variables declared inside a function.
+
+           -> Accessible only within that function.
+
+    (b) Global Scope
+
+            -> Variables declared outside functions.
+
+            -> Can’t be accessed directly inside functions unless declared as global.
+
+    (c) Static Scope
+
+            -> A variable inside a function normally resets each time the function runs.
+
+            -> If declared as static, it retains its value between function calls.
+
+    (d) Super Global Variables
+
+            -> Built-in variables available everywhere (global + local).
+
+
+
+
+    CONDITIONAL STATEMENTS :
+
+    1]  Explain how conditional statements workin PHP.
+
+    -> Conditional statements let your program make decisions and execute different code depending on whether a condition is true or false.
+
+
+        1. if Statement
+
+            Executes code only if the condition is true.
+
+
+        2. if...else Statement
+
+            Executes one block if the condition is true, otherwise another block.
+
+
+        3. if...elseif...else Statement
+
+            Used to check multiple conditions.
+
+
+        4. switch Statement
+
+            Alternative to multiple if...elseif. Compares a value against different cases.
+
+
+
+                        || Loops: Do-While, ForEach, ForLoop ||
+
+
+               1] do-While :
+
+                Use-case:do  while loop is used to executed when condition is true but do will be exuted once time either condition is true or false.
+
+               2] ForEach  :
+
+                Use-case : foreach is used to convert any array as values in php.
+
+               3] ForLoop :
+
+                Use-case :  for loop are executed when condition is true.
+
+
+                    
+                      ||  Difference ||
+
+            | ------------ | --------------------------------- | --------------------- | ----------------------------- |
+            | **for**      | Fixed number of iterations        | Before each iteration | Printing 1 to 100             |
+            | **foreach**  | Iterating over arrays/collections | Automatic             | Looping through colors list   |
+            | **do-while** | At least one execution guaranteed | After each iteration  | Taking user input until valid |
