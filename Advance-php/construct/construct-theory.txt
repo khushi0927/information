@@ -1,0 +1,11 @@
+ What is construct ??
+
+ -> Method having a same name as classname.
+
+
+
+ ----------- Types of Construct ---------------
+
+ 1) Default Construct
+ 2) Parameterized Construct
+ 3) Overloading Construct
