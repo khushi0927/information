@@ -1,0 +1,87 @@
+Super Global	Description
+$_GET	Holds data sent via URL parameters (query string)
+$_POST	Holds data sent via HTML forms using POST method
+$_REQUEST	Holds data from both $_GET, $_POST, and $_COOKIE
+$_SERVER	Holds information about the server and execution environment
+$_FILES	Holds information about uploaded files
+$_ENV	Holds environment variables
+$_COOKIE	Holds cookies sent by the client
+$_SESSION	Holds session variables
+$_GLOBALS	Holds references to all variables available in global scope
+
+
+1.GET:
+<!-- URL: example.php?name=John&age=25 -->
+<?php
+echo "Name: " . $_GET["name"]; // Output: John
+echo "Age: " . $_GET["age"];   // Output: 25
+?>
+
+2.POST:
+-> <form method="post" action="process.php">
+  Name: <input type="text" name="name">
+  <input type="submit">
+</form>
+	<?php
+echo "Hello, " . $_POST["name"];
+?>
+3.REQUEST
+<!-- form.html -->
+<form method="post" action="submit.php">
+  <input type="text" name="username">
+  <input type="submit" value="Submit">
+</form>
+
+// submit.php
+<?php
+  $name = $_REQUEST['username'];
+  echo "Hello, " . $name;
+?>
+
+4.$_SERVER
+<?php
+echo $_SERVER['PHP_SELF'];       // Current file name
+echo $_SERVER['SERVER_NAME'];    // Server name
+echo $_SERVER['HTTP_HOST'];      // Host (e.g., localhost)
+echo $_SERVER['HTTP_USER_AGENT']; // Browser info
+?>
+5.
+<form action="upload.php" method="post" enctype="multipart/form-data">
+  Select file: <input type="file" name="myFile">
+  <input type="submit" value="Upload">
+</form>
+	<?php
+	echo "File Name: " . $_FILES['myFile']['name'];
+	echo "Temp Path: " . $_FILES['myFile']['tmp_name'];
+	?>
+6.
+<?php
+print_r($_ENV);
+?>
+
+7.
+<?php
+setcookie("user", "John", time() + 3600); // Set for 1 hour
+echo $_COOKIE["user"]; // Get cookie
+?>
+
+8.
+<?php
+session_start();
+$_SESSION["username"] = "JohnDoe";
+echo $_SESSION["username"];
+?>
+
+9.
+
+<?php
+$x = 10;
+$y = 20;
+
+function add() {
+  $GLOBALS['z'] = $GLOBALS['x'] + $GLOBALS['y'];
+}
+
+add();
+echo $z; // Output: 30
+?>
