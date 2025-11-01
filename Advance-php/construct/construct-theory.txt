@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  What is construct ??
 
  -> Method having a same name as classname.
@@ -8,4 +9,16 @@
 
  1) Default Construct
  2) Parameterized Construct
+=======
+ What is construct ??
+
+ -> Method having a same name as classname.
+
+
+
+ ----------- Types of Construct ---------------
+
+ 1) Default Construct
+ 2) Parameterized Construct
+>>>>>>> 3d7a8e84d0b5b2bab93b45629bd2d62ccb481133
  3) Overloading Construct
