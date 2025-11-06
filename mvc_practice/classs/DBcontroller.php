@@ -2,6 +2,7 @@
 
 class DBcontroller {
 
+    // connection configuration
     private $host = "localhost";
     private $user = "root";
     private $password = "";
@@ -16,6 +17,10 @@ class DBcontroller {
         $conn = mysqli_connect($this->host,$this->user,$this->password,$this->database);
         return $conn;
     }
+
+
+
+//-----------------insert---------------------
      function bindQueryParams($sql, $param_type, $param_value_array) 
     {
         $param_value_reference[] = & $param_type;
@@ -38,6 +43,44 @@ class DBcontroller {
         return $insertId;
     }
     
+    //-----------------view---------------
+     function runBaseQuery($query) 
+       {
+        $result = $this->conn->query($query);   
+        if ($result->num_rows > 0) 
+            {
+            while($row = $result->fetch_assoc()) 
+                {
+                $resultset[] = $row;
+            }
+        }
+        return $resultset;
+    }
+
+    function update($query, $param_type, $param_value_array) 
+    {
+        $sql = $this->conn->prepare($query);
+        $this->bindQueryParams($sql, $param_type, $param_value_array);
+        $sql->execute();
+    }
+
+     function runQuery($query, $param_type, $param_value_array) 
+ {
+        $sql = $this->conn->prepare($query);
+        $this->bindQueryParams($sql, $param_type, $param_value_array);
+        $sql->execute();
+        $result = $sql->get_result();
+        
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                $resultset[] = $row;
+            }
+        }
+        
+        if(!empty($resultset)) {
+            return $resultset;
+        }
+    }
    
 }
 
