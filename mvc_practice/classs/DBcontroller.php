@@ -1,15 +1,12 @@
 <?php
-
-class DBcontroller {
-
-    // connection configuration
+class DBController {
     private $host = "localhost";
     private $user = "root";
     private $password = "";
     private $database = "crud_example";
     private $conn;
-
-     function __construct() {
+    
+    function __construct() {
         $this->conn = $this->connectDB();
     }   
     
@@ -17,11 +14,9 @@ class DBcontroller {
         $conn = mysqli_connect($this->host,$this->user,$this->password,$this->database);
         return $conn;
     }
-
-
-
-//-----------------insert---------------------
-     function bindQueryParams($sql, $param_type, $param_value_array) 
+    
+   //-----------------INSERT----------------------------------
+  function bindQueryParams($sql, $param_type, $param_value_array) 
     {
         $param_value_reference[] = & $param_type;
         
@@ -34,7 +29,7 @@ class DBcontroller {
             'bind_param'
         ), $param_value_reference);
     }
-     
+    
     function insert($query, $param_type, $param_value_array) {
         $sql = $this->conn->prepare($query);
         $this->bindQueryParams($sql, $param_type, $param_value_array);
@@ -42,9 +37,8 @@ class DBcontroller {
         $insertId = $sql->insert_id;
         return $insertId;
     }
-    
-    //-----------------view---------------
-     function runBaseQuery($query) 
+    //--------------------------VIEW----------------------------------
+       function runBaseQuery($query) 
        {
         $result = $this->conn->query($query);   
         if ($result->num_rows > 0) 
@@ -57,14 +51,14 @@ class DBcontroller {
         return $resultset;
     }
 
-    function update($query, $param_type, $param_value_array) 
-    {
+function update($query, $param_type, $param_value_array) 
+{
         $sql = $this->conn->prepare($query);
         $this->bindQueryParams($sql, $param_type, $param_value_array);
         $sql->execute();
-    }
+}
 
-     function runQuery($query, $param_type, $param_value_array) 
+ function runQuery($query, $param_type, $param_value_array) 
  {
         $sql = $this->conn->prepare($query);
         $this->bindQueryParams($sql, $param_type, $param_value_array);
@@ -81,8 +75,6 @@ class DBcontroller {
             return $resultset;
         }
     }
-   
+  
 }
-
-
 ?>
