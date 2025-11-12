@@ -23,7 +23,7 @@ class User {
     }
 
      
-    public function login($Username, $Password) {
+    public function login($Email, $Password) {
         $Email = $this->conn->real_escape_string($Email);
         $query = "SELECT * FROM {$this->table} WHERE Email='$Email'";
         $result = $this->conn->query($query);
