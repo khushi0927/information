@@ -20,7 +20,7 @@
             <form action="index.php?controller=auth&action=login" method="post">
                 <h1>Login</h1>
                 <div class="input-box">
-                    <input type="text" name="Username" placeholder="Username" required>
+                    <input type="Email" name="Email" placeholder="Email" required>
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-box">

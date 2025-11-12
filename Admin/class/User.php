@@ -23,14 +23,14 @@ class User {
     }
 
      
-    public function login($Email, $Password) {
+    public function login($Username, $Password) {
         $Email = $this->conn->real_escape_string($Email);
         $query = "SELECT * FROM {$this->table} WHERE Email='$Email'";
         $result = $this->conn->query($query);
 
         if ($result->num_rows > 0) {
             $User = $result->fetch_assoc();
-            if (password_verify($Password, $User['Password'])) {
+            if (password_verify($Password , $User['Password'])) {
                 return $User;
             }
         }

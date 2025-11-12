@@ -44,18 +44,18 @@ class AuthController {
 
     public function login() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $Username=trim($_POST['Username']);
+            $Email=trim($_POST['Email']);
             $Password = $_POST['Password'];
 
-            $User = $this->User->login($Username, $Password);
+            $User = $this->User->login($Email, $Password);
 
             if ($User) {
                 $_SESSION['id'] = $User['id'];
-                $_SESSION['Username'] = $User['Username'];
+                $_SESSION['Email'] = $User['Email'];
                 $_SESSION['Password'] = $User['Password'];
                 header("Location: index.php?controller=auth&action=dashboard");
             } else {
-                $_SESSION['error'] = "Invalid Username or password!";
+                $_SESSION['error'] = "Invalid Email or password!";
                 header("Location: index.php?controller=auth&action=index");
             }
         }
