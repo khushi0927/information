@@ -9,7 +9,7 @@ class Student
     }
     
     function addStudent($name, $roll_number, $dob, $class) {
-        $query = "INSERT INTO tbl_student2 (name,roll_number,dob,class) VALUES (?, ?, ?, ?)";
+        $query = "INSERT INTO tbl_student (name,roll_number,dob,class) VALUES (?, ?, ?, ?)";
         $paramType = "siss";
         $paramValue = array(
             $name,
@@ -25,7 +25,7 @@ class Student
     //view
      function getAllStudent() 
     {
-            $sql = "SELECT * FROM tbl_student2";
+            $sql = "SELECT * FROM tbl_student";
             $result = $this->db_handle->runBaseQuery($sql);
             return $result;
     }
@@ -34,7 +34,7 @@ class Student
     //delete
      function deleteStudent($student_id) 
      {
-        $query = "DELETE FROM tbl_student2 WHERE id = ?";
+        $query = "DELETE FROM tbl_student WHERE id = ?";
         $paramType = "i";
         $paramValue = array($student_id);
         $this->db_handle->update($query, $paramType, $paramValue);
@@ -43,7 +43,7 @@ class Student
     
     //edit
        function getStudentById($student_id) {
-        $query = "SELECT * FROM tbl_student2 WHERE id = ?";
+        $query = "SELECT * FROM tbl_student WHERE id = ?";
         $paramType = "i";
         $paramValue = array(
             $student_id
@@ -56,7 +56,7 @@ class Student
 
     //update
     function editStudent($name, $roll_number, $dob, $class, $student_id) {
-        $query = "UPDATE tbl_student2 SET name = ?,roll_number = ?,dob = ?,class = ? WHERE id = ?";
+        $query = "UPDATE tbl_student SET name = ?,roll_number = ?,dob = ?,class = ? WHERE id = ?";
         $paramType = "sissi";
         $paramValue = array(
             $name,
