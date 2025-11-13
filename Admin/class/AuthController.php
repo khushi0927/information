@@ -15,11 +15,11 @@ class AuthController {
 
     
      public function index() {
-        require __DIR__ . '/../web/sign-up.php';
+        require __DIR__ . '/../web/login.php';
     }
 
-     public function registerPage() {
-        require __DIR__ . '/../web/sign-up.php';
+     public function signup() {
+        require __DIR__ . '/../web/register.php';
     }
 
      public function register() {
@@ -45,7 +45,7 @@ class AuthController {
     public function login() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $Email=trim($_POST['Email']);
-            $Password = $_POST['Password'];
+            $Password =$_POST['Password'];
 
             $User = $this->User->login($Email, $Password);
 
