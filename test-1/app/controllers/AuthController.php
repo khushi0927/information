@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once __DIR__ . '/../../config/db.php';
 require_once __DIR__ . '/../models/User.php';
 
@@ -22,9 +22,6 @@ class AuthController {
     }
 
     public function register() {
-
-        echo "enterd";
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $name = trim($_POST['first_name']);
             $email = trim($_POST['email']);
@@ -49,4 +46,26 @@ class AuthController {
         }
     }
 
+    public function login() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $email = trim($_POST['email']);
+            $password = $_POST['password'];
+
+            $user = $this->userModel->login($email, $password);
+
+            if ($user) 
+                {
+                    echo 'hi';
+                // $_SESSION['user_id'] = $user['id'];
+                // $_SESSION['user_name'] = $user['name'];
+                // $_SESSION['user_email'] = $user['email'];
+                header("Location: index.php?controller=auth&action=dashboard");
+            } else {
+                // $_SESSION['error'] = "Invalid email or password!";
+                header("Location: index.php?controller=auth&action=index");
+            }
+        }
+    }
+
+  
 }

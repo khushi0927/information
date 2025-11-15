@@ -9,13 +9,13 @@
     <form method="POST" action="index.php?controller=auth&action=login">
         
         <p>
-        Enter your Email: <input type="email" name="email" />
+        Enter Your Email: <input type="email" name="email" required />
         </p>
         <p>
-           Enter your password: <input type="password" name="password" />
+           Enter Your password: <input type="password" name="password" required/>
         </p>
         <p>
-            <input type="submit" value="login" />
+            <input type="submit" value="Login" />
         </p>
     </form>
     <p >

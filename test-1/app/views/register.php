@@ -8,16 +8,16 @@
 <body>
     <form method="POST" action="index.php?controller=auth&action=register">
         <p>
-           Enter your First_name: <input type="text" name="first_name" />
+           Enter Your First_name: <input type="text" name="first_name" required />
         </p>
         <p>
-        Enter your Email: <input type="email" name="email" />
+        Enter Your Email: <input type="email" name="email" required />
         </p>
         <p>
-           Enter your password: <input type="password" name="password" />
+           Enter Your password: <input type="password" name="password" required/>
         </p>
          <p>
-           Enter your confirm_password: <input type="password" name="confirm_password" />
+           Enter Your confirm_password: <input type="password" name="confirm_password" required/>
         </p>
         <p>
             <input type="submit" value="Register" />
