@@ -67,5 +67,19 @@ class AuthController {
         }
     }
 
+     public function dashboard() {
+        if (!isset($_SESSION['user_id'])) {
+            header("Location: index.php?controller=auth&action=index");
+            exit;
+        }
+        require __DIR__ . '/../views/dashboard.php';
+    }
+
+    public function logout() {
+        session_unset();
+        session_destroy();
+        header("Location: index.php?controller=auth&action=index");
+    }
+
   
 }
