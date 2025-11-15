@@ -12,9 +12,9 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 <body class="bg-light">
 <div class="container mt-5 text-center">
-    <h3>Welcome, <?= htmlspecialchars($_SESSION['user_name']); ?> 🎉</h3>
+    <h3>Welcome, <?= htmlspecialchars($_SESSION['user_name']); ?> 💖🎉</h3>
     <p>Your email: <?= htmlspecialchars($_SESSION['user_email']); ?></p>
     <a href="index.php?controller=auth&action=logout" class="btn btn-danger mt-3">Logout</a>
 </div>
 </body>
-</html>
+</html> 
