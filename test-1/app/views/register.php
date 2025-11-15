@@ -28,11 +28,11 @@
         <div id="pwHelp" class="helper"></div>
     </div>
 
-        <p>
+      
             <input type="submit" class="btn" value="Register" />
         </p>
     </form>
-</div> 
+
             <p >
                 Don't have an account?
                 <a href="index.php?controller=auth&action=login">Login</a>
