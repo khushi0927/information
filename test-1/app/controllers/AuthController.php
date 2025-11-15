@@ -56,12 +56,12 @@ class AuthController {
             if ($user) 
                 {
                     echo 'hi';
-                // $_SESSION['user_id'] = $user['id'];
-                // $_SESSION['user_name'] = $user['name'];
-                // $_SESSION['user_email'] = $user['email'];
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['user_name'] = $user['name'];
+                $_SESSION['user_email'] = $user['email'];
                 header("Location: index.php?controller=auth&action=dashboard");
             } else {
-                // $_SESSION['error'] = "Invalid email or password!";
+                 $_SESSION['error'] = "Invalid email or password!";
                 header("Location: index.php?controller=auth&action=index");
             }
         }
