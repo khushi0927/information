@@ -10,41 +10,42 @@
     <h2>Add Product</h2>
 
       <form id="productForm" enctype="multipart/form-data">
-        <input type="text" name="name" placeholder="Product Name" required>   <br><br>
-        <input type="number" name="price" placeholder="Price" required><br><br>
-        <input type="file" name="image" required><br><br>
+        <input type="hidden" name="id" id="productId">
+        <input type="text" name="name" id="name" placeholder="Product Name" required>   <br><br>
+        <input type="number" name="price" id="price" placeholder="Price" required><br><br>
+        <input type="file" name="image" id="image" required><br><br>
         <button type="submit">Add Product</button>
+        <button type="button" id="cancelUpdate">Cancel</button>
     </form>
 
       <h3>Product List</h3>
-      <input type="text" id="searchBox" placeholder=" 🔎Search Product..." style="margin-bottom:20px;">
+        <input type="text" id="search" placeholder="🔎Search Product..."><br><br>
+     
     <div id="productList"></div>
 
 
     <script>
-
-     $("#productForm").on("submit",function(e)
-        {
+        //add or update product
+      $("#productForm").on("submit", function(e){
             e.preventDefault();
             var formData = new FormData(this);
 
             $.ajax({
-
-            url: "insert_product.php",
-            type: "POST",
-            data: formData,
-            contentType: false,
-            processData: false,
-             success: function(response){
-                alert(response);
-                loadProducts();
-                $("#productForm")[0].reset();
-            }
-
+                url: "insert_product.php",
+                type: "POST",
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(response){
+                    alert(response);
+                    $("#productForm")[0].reset();
+                    $("#productId").val('');
+                    loadProducts();
+                }
             });
-
         });
-
+        
+        //fetch_product
         function loadProducts()
         {
              $.ajax({
@@ -59,19 +60,51 @@
             }); 
         }
 
-        $("#searchBox").on("keyup", function() {
-            var query = $(this).val();
+        //search_product
+          $("#search").on("keyup", function(){
+            var search = $(this).val();
+            loadProducts(search);
+        }); 
+
+        //cancel
+      $("#cancelUpdate").on("click", function(){
+            $("#productForm")[0].reset();
+            $("#productId").val('');
+        });
+
+          // Delete Product
+        $(document).on("click", ".deleteBtn", function(){
+            if(confirm("Are you sure to delete this product?")){
+                var id = $(this).data("id");
+                $.ajax({
+                    url: "delete_product.php",
+                    type: "POST",
+                    data: {id:id},
+                    success: function(response){
+                        alert(response);
+                        loadProducts();
+                    }
+                });
+            }
+        });
+
+
+        //edit_product
+         $(document).on("click", ".editBtn", function(){
+            var id = $(this).data("id");
             $.ajax({
-                url: "search_product.php",
+                url: "get_product.php",
                 type: "GET",
-                data: { query },
-                success: function(data) {
-                    $("#productList").html(data);
+                dataType: "json",
+                data: {id:id},
+                success: function(data){
+                    $("#productId").val(data.id);
+                    $("#name").val(data.name);
+                    $("#price").val(data.price);
                 }
             });
         });
 
-         
 
     </script>
 </body>

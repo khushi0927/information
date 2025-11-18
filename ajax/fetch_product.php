@@ -1,8 +1,8 @@
 <?php
-
-$conn = mysqli_connect("localhost","root","","ajax_example");
-
-$result = $conn->query("SELECT * FROM tbl_product ORDER BY id DESC");
+$conn = new mysqli("localhost", "root", "", "ajax_example");
+$search = $_GET['search'] ?? '';
+$searchSql = $search ? "WHERE name LIKE '%$search%'" : '';
+$result = $conn->query("SELECT * FROM tbl_product $searchSql ORDER BY id DESC");
 
 if ($result->num_rows > 0) {
     echo "<table border='1' cellpadding='10'>
@@ -16,12 +16,14 @@ if ($result->num_rows > 0) {
                 <td><img src='uploads/{$row['image']}' width='80'></td>
                 <td>{$row['name']}</td>
                 <td>₹ {$row['price']}</td>
+                 <td>
+                    <button class='editBtn' data-id='{$row['id']}'>Edit</button>
+                    <button class='deleteBtn' data-id='{$row['id']}'>Delete</button>
+                </td>
               </tr>";
     }
     echo "</table>";
 } else {
     echo "No products found!";
 }
-
-
 ?>
