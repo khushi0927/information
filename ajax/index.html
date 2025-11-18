@@ -37,7 +37,7 @@
             processData: false,
              success: function(response){
                 alert(response);
-                loadProducts(); // refresh product list
+                loadProducts();
                 $("#productForm")[0].reset();
             }
 
@@ -64,7 +64,7 @@
             $.ajax({
                 url: "search_product.php",
                 type: "GET",
-                data: { q: query },
+                data: { query },
                 success: function(data) {
                     $("#productList").html(data);
                 }
