@@ -60,17 +60,18 @@
             }); 
         }
 
+          //cancel
+            $("#cancelUpdate").on("click", function(){
+                    $("#productForm")[0].reset();
+                    $("#productId").val('');
+                });
+
         //search_product
           $("#search").on("keyup", function(){
             var search = $(this).val();
             loadProducts(search);
         }); 
 
-        //cancel
-      $("#cancelUpdate").on("click", function(){
-            $("#productForm")[0].reset();
-            $("#productId").val('');
-        });
 
           // Delete Product
         $(document).on("click", ".deleteBtn", function(){
@@ -87,7 +88,6 @@
                 });
             }
         });
-
 
         //edit_product
          $(document).on("click", ".editBtn", function(){
