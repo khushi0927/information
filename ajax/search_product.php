@@ -1,13 +1,7 @@
 <?php
 
-
 $conn = mysqli_connect("localhost", "root", "", "ajax_example");
 
-if (!$conn) {
-	http_response_code(500);
-	echo "Database connection failed: " . htmlspecialchars(mysqli_connect_error());
-	exit;
-}
 
 $query = isset($_GET['query']) ? $_GET['query'] : '';
 
