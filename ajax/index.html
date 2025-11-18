@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax-example</title>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h2>Add Product</h2>
+
+      <form id="productForm" enctype="multipart/form-data">
+        <input type="text" name="name" placeholder="Product Name" required>   <br><br>
+        <input type="number" name="price" placeholder="Price" required><br><br>
+        <input type="file" name="image" required><br><br>
+        <button type="submit">Add Product</button>
+    </form>
+
+      <h3>Product List</h3>
+      <input type="text" id="searchBox" placeholder=" 🔎Search Product..." style="margin-bottom:20px;">
+    <div id="productList"></div>
+
+
+    <script>
+
+     $("#productForm").on("submit",function(e)
+        {
+            e.preventDefault();
+            var formData = new FormData(this);
+
+            $.ajax({
+
+            url: "insert_product.php",
+            type: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+             success: function(response){
+                alert(response);
+                loadProducts(); // refresh product list
+                $("#productForm")[0].reset();
+            }
+
+            });
+
+        });
+
+        function loadProducts()
+        {
+             $.ajax({
+
+            url: "fetch_product.php",
+            type: "GET",
+            
+             success: function(data){
+                $("#productList").html(data);
+            }
+
+            }); 
+        }
+
+        $("#searchBox").on("keyup", function() {
+            var query = $(this).val();
+            $.ajax({
+                url: "search_product.php",
+                type: "GET",
+                data: { q: query },
+                success: function(data) {
+                    $("#productList").html(data);
+                }
+            });
+        });
+
+         
+
+    </script>
+</body>
+</html>
