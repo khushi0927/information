@@ -6,7 +6,7 @@ $id = $_POST['id'] ?? '';
 $name = $_POST['name'];
 $price = $_POST['price'];
 
-// Handle Image Upload
+
 $imageName = '';
 if(!empty($_FILES['image']['name'])){
     $imageName = time() . '_' . $_FILES['image']['name'];

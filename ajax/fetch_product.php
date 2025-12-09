@@ -1,5 +1,5 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "ajax_example");
+$conn = new mysqli("localhost", "root", "", "mvc_task");
 $search = $_GET['search'] ?? '';
 $searchSql = $search ? "WHERE name LIKE '%$search%'" : '';
 $result = $conn->query("SELECT * FROM tbl_product $searchSql ORDER BY id DESC");
