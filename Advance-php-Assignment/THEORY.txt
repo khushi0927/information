@@ -1,0 +1,607 @@
+--------------------------------------------------------------------------- ADVANCE-PHP -------------------------------------------------------------------------------
+
+1] OOPs CONCEPTS :-
+
+
+1.  Define Object-Oriented Programming (OOP) and its four main principles: Encapsulation, Inheritance, Polymorphism, andAbstraction.
+=>  
+	------------------|| OOP ||----------------------------
+
+  -> OOP : OOP stands for Object Oriented Programming
+  -> Object-Oriented Programming is a programming paradigm that organizes software design around objects.
+  -> OOP helps in making programs more modular, reusable, secure, and easy to maintain.
+
+=> Four Main Principles of OOP 
+	1.Encapsulation
+	2.Inheritance
+	3.Polymorphism
+	4.Abstraction
+
+	----------------|| Encapsulation ||--------------------
+
+  -> Encapsulation means binding data and methods together into a single unit called a class and restricting direct access to some data.
+  -> Wrapping up of data or binding of data.
+  -> Data is hidden using access modifiers (private, protected, public).
+  -> Improves data security and control.
+  -> Example : capsul
+
+	----------------|| Inheritance ||-----------------------
+
+  -> Inheritance allows a child class to acquire the properties and methods of a parent class.
+  -> when one object acquire all the properties and behaviour of parent class.
+  -> Example : Father-Son.
+
+	----------------|| Polymorphism ||----------------------
+
+  -> Polymorphism means one name, many forms. The same method can perform different tasks based on the object.
+  -> Many ways to perform anything.
+  -> Achieved using method overloading and method overriding.
+
+	----------------|| Abstraction ||----------------------
+
+  -> Abstraction means hiding implementation details and showing only essential features to the user.
+  -> Hiding internal details and showing functionalities
+  -> Achieved using abstract classes or interfaces
+  -> Example : Login Page
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2] CLASS :-
+
+
+2.  Explain the structure of a class in PHP, including properties and methods.
+=> 
+	------------------|| CLASS ||-------------------------
+  -> A Class is a blueprint used to create objects.
+  -> Collection of objects that is called class.
+  -> Example : Human body
+
+   ------ BASIC STRUCTURE OF CLASS
+
+  -> <?php
+	class ClassName {
+
+    	// Properties 
+    	public $property1;
+   	 private $property2;
+
+   	 // Constructor
+  	  public function __construct($value) {
+          $this->property1 = $value;
+   	 }
+
+   	 // Methods (functions)
+  	  public function showData() {
+     	   echo $this->property1;
+   	 }
+	}
+	?>
+
+
+	--------------------|| PROPERTIES ||--------------------
+
+  -> Properties are variables that store data related to the class.
+  -> Properties Defined inside the class.
+  -> Use access modifiers: public, private, protected
+  -> Example : 
+	class Student {
+   	 public $name;
+   	 private $marks;
+	}
+
+
+	-------------------|| METHODS ||-------------------------
+
+  -> Methods are functions that define the behavior of the class.
+  -> Defined inside the class.
+  -> Can access properties using $this
+  -> Example : 
+	class Student {
+   	 public function display() {
+      	  echo "Student Name";
+  	  }
+	}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3] OBJECT :-
+
+
+3. What is an object in OOP? Discuss how objects are instantiated from classes in PHP.
+=> 
+	-------------------|| OBJECT ||-------------------------
+ 
+  ->  Object is a real-world entity and an instance of a class.
+  ->  Any Entity which has own state and behaviour that is called an object.
+  -> It represents a specific implementation of the class and contains:
+	- Properties (data/variables)
+	- Methods (functions/behavior)
+
+	
+	---------------------|| INSTANTIATING OBJECT ||-------------------
+
+  -> Creating an object from a class is called instantiation.
+  -> This is done using the new keyword. 
+
+	1) Basic instatiation : Use new keyword
+	2) Using the Constructor : __construct
+	3) Accessing properties and methods : use the object operator (->)
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4] EXTENDS :-
+
+4. Explain the concept of inheritance in OOP and how it is implemented in PHP.
+=>
+	--------------------|| INHERITANCE ||---------------------------
+
+  -> Inheritance is a fundamental concept of Object-Oriented Programming (OOP) where a child class (subclass) acquires the properties and methods of a parent class (superclass).
+  -> Improves maintainability and extensibility of code
+  -> Types of Inheritance :
+	1) Single inheritance
+	2) Multilevel inheritance
+	3) Hierarchical inheritance
+
+	-------------------|| IMPLIMENTATION ||--------------------------
+
+  -> inheritance is implemented using the extends keyword.
+ 
+	1) Extends keyword
+	2) Method Overriding
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+5] OVERLOADING :-
+
+5. Discuss method overloading and how it is implemented in PHP.
+=>
+	-------------------|| OVERLOADING ||------------------------------
+
+  -> Method overloading means defining multiple methods with the same name in the same class but with different parameters.
+  -> PHP implements method overloading using magic methods.
+  -> The correct method is selected based on the arguments passed at runtime.
+
+	-------------------|| IMPLIMENTATION ||-----------------------------
+
+  -> 1) Using magic methods : (__call and __callstatic)
+  -> 2) USing default arguments.
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+6] ABSTRACTION INTERFACE :-
+
+6.  Explain the concept of abstraction and the use of interfaces in PHP.
+=> 
+	------------------------|| ABSTRACTION ||----------------------------
+
+  -> Abstraction is the process of hiding internal implementation details and showing only the essential features of an object.
+  -> Hiding internal details and showing functionalities.
+
+	------------------------|| INTERFACE ||-------------------------------
+
+  -> An interface is a "contract" that specifies which methods a class must implement, without providing any code for those methods.
+  -> Syntax: Defined using the interface keyword and implemented by classes using the implements keyword.
+  -> All methods must be public.
+  -> Allows unrelated classes to share a common behavior, enabling them to be used interchangeably through polymorphism. 
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+7] CONSTRUCTOR :-
+
+7.  What is a constructor in PHP? Discuss its purpose and how it is used.
+=> 
+	---------------------|| CONTRUSCTOR ||-----------------------------------
+
+  -> A constructor is a special magic method (__construct) that is automatically executed when a new instance of a class is created using the new keyword.  
+  -> It is mainly used to initialize object properties and perform setup tasks.
+
+	------------------|| PURPOSE ||------------------------------------
+
+  -> To initialize class properties with default or passed values.
+  -> To set up required resources (database connection, file handling, etc.).
+  -> To ensure the object starts in a valid state.
+  -> To reduce repetitive initialization code.
+
+	--------------------|| USE ||--------------------------------
+
+  -> Constructors are defined using the __construct() method name.
+  -> <?php
+	class User {
+	    public $name;
+	    public function __construct($name) {
+	        $this->name = $name; // Traditional initialization
+	    }
+	}
+	$user = new User("xyz"); 
+      ?>
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+8] DESTRUCTOR :-
+
+8.  Explain the role of a destructor in PHP and when it is called.
+=> 
+	----------------------|| DESTRUCTOR ||------------------------
+
+  -> A destructor is a special magic method (__destruct) that is automatically called when an object is destroyed. 
+  -> It is mainly used to free resources that the object was using.
+
+	----------------------|| ROLE ||------------------------------
+
+  -> To release system resources (database connections, file handles, memory).
+  -> To perform cleanup tasks before an object is destroyed.
+  -> To close open files or network connections.
+  -> To maintain efficient memory management.
+
+	----------------------|| WHEN DESTRUCT CALL ||-------------------------
+
+  -> The script execution ends.
+  -> An object goes out of scope.
+  -> An object is explicitly destroyed using unset().
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+9] MAGIC METHODS :-
+
+9.  Define magic methods in PHP. Discuss commonly used magic methods like __get(), __set(),and __construct().
+=> 
+	-----------------|| MAGIC METHOD ||---------------------------------
+
+  -> Magic methods in PHP are special predefined methods that start with double underscores (__).
+  -> Magic methods help in:
+	-Implementing OOP features
+	-Controlling object behavior
+	-Making code more flexible and dynamic
+
+	--------------------|| __CONSTRUCT() ||---------------------------
+
+  -> __construct() is a constructor method that is automatically called when an object is created.
+  -> Initialize object properties.
+  -> Set up resources (database connection, files, etc.).
+
+	-------------------|| __GET() ||-------------------------------
+
+  -> __get() is automatically called when trying to access an inaccessible or undefined property of an object.
+  -> Control how private/protected properties are accessed.
+  -> Provide dynamic property handling.
+
+	------------------|| __SET() ||-------------------------------
+ 
+  -> __set() is automatically called when trying to assign a value to an inaccessible or undefined property.
+  -> Validate or modify values before assignment.
+  -> Control write access to properties.
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+10] SCOPE RESOLUTION :- 
+
+10.  Explain the scope resolution operator (::) and its use in PHP.
+=> 
+	----------------------|| SCOPE RESOLUTION OPERATOR(::) ||------------------------
+
+  -> The scope resolution operator (::) in PHP is used to access class-level members such as static properties, static methods, constants, and overridden methods of a parent class.
+  -> It allows access to class members without creating an object.
+
+
+	--------------------|| USE ||-------------------------------------------
+
+  -> Access static properties
+  -> Call static methods.
+  -> Access class constants.
+  -> Call parent class methods.
+  -> Access self and parent members.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+11] TRAITS :- 
+
+11. Define traits in PHP and their purpose in code reuse.
+=> 
+	---------------------|| TRAITS ||------------------------------------
+  
+  -> A trait in PHP is a mechanism used to reuse code across multiple classes.
+  -> Traits allow you to include methods (and properties) in a class without using inheritance.
+  -> They help solve the problem that PHP does not support multiple inheritance.
+
+	
+	---------------------|| PURPOSE ||--------------------------------
+
+  -> Enable code reuse in different classes.
+  -> Avoid duplication of common methods.
+  -> Achieve horizontal reuse (reuse across unrelated classes).
+  -> Overcome limitations of single inheritance.
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+12] VISIBILITY :-
+
+12.  Discuss the visibility of properties and methods in PHP(public,private,protected).
+=>
+	--------------------------|| VISIBILITY ||-----------------------------------------
+
+  -> visibility control where class properties and methods can be accessed from.
+  -> PHP supports three visibility levels:
+	1.PUBLIC 
+	2.PRIVATE 
+	3.PROTECTED
+
+	-----------------------------|| PUBLIC ||---------------------------------
+
+  -> Members declared as public are accessible from anywhere:
+  -> Inside the class
+  -> Outside the class
+  -> From child classes
+
+
+	-----------------------------|| PRIVATE ||--------------------------------
+
+  -> Members declared as private are accessible only within the same class.
+  -> Not accessible outside the class
+  -> Not accessible in child classes
+
+
+	-----------------------|| PROTECTED ||---------------------------------
+
+  -> Members declared as protected are accessible:
+  -> Inside the same class
+  -> Inside child (derived) classes
+  -> Not accessible outside the class
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+13] TYPE HINTING :-
+
+13. Explain type hinting in PHP and its benefits.
+=> 
+	---------------------|| TYPE HINTIMG ||---------------------------
+
+  -> Type hinting in PHP is a feature that allows developers to specify the expected data type of function parameters, return values, and class properties.
+  -> It helps PHP check types at runtime and throw errors when incorrect types are passed.
+
+	-------------------|| USED ||------------------------------
+  
+  -> Function and method parameters
+  -> Return types
+  -> Class properties
+
+
+	-----------------|| BENEFITS ||--------------------------
+
+  -> Detects errors early
+  -> Improves code readability
+  -> Makes code more reliable
+  -> Reduces runtime bugs
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+14] FINAL KEYWORD :-
+
+14.  Discuss the purpose of the final keyword in PHP and how it affects classes and methods.
+=>
+	--------------------------|| FINAL KEYWORD ||-------------------------------------
+
+  -> The final keyword in PHP is used to restrict inheritance and method overriding.
+  -> It ensures that a class or method cannot be extended or overridden, helping maintain the integrity of the code.
+
+
+	------------------------|| PURPOSE ||------------------------------------
+
+  -> To prevent a class from being inherited
+  -> To prevent a method from being overridden in child classes
+  -> To protect core functionality from being changed
+  -> To improve code security and stability
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+15] EMAIL SECURITY FUNCTION :- 
+
+15. Explain the importance of email security and common practices to ensure secure email transmission.
+=> 
+	------------------------|| IMPORTANCE ||--------------------------------
+ 
+  -> Email security is essential because email is one of the most widely used communication tools and a common target for cyberattacks.
+  -> Emails often contain sensitive information such as passwords, personal data, financial details, and confidential business information.
+  -> Without proper security, emails can be:
+	- Intercepted by attackers
+	- Modified during transmission
+	- Used for phishing, malware distribution, or identity theft
+  -> Protect sensitive information 
+  -> Prevents Phishing and Fraud
+  -> Ensures Data Integrity
+  -> Ensures Data Integrity
+  -> Builds Trust
+
+	--------------------------|| COMMON PRACTICE TO ENSURE SECURE EMAIL ||---------------------------------
+
+  -> Email Encryption
+  -> Strong Authentication
+  -> Secure Email Protocols
+  -> Digital Signatures
+  -> Regular Software Updates
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+16] FILE HANDLING :- 
+
+
+16. Discuss file handling in PHP, including opening, reading, writing, and closing files.
+ => 
+	-----------------------------------------|| FILE HANDLING ||-------------------------------------------
+
+  -> File handling in PHP allows a program to create, open, read, write, and close files stored on the server.
+
+
+	--------------------------------|| OPENING FILE ||------------------------------------------
+
+  -> The fopen() function is used to open a file.
+  -> File open modes r,w,a,r+,w+,a+.
+
+	--------------------------------|| READING FILE ||----------------------------------------
+
+  1) fread():
+  -> Reads a specified number of bytes.
+
+  2) fgets():
+  -> Reads one line at a time.
+
+  3) file_get_contents():
+  -> Reads entire file at once.
+
+ 	-------------------------------|| WRITING TO A FILE ||-------------------------------
+
+  1) fwrite():
+  -> Writes data to a file.
+
+  2) Append mode :
+
+
+
+	--------------------------|| CLOSING A FILE ||-------------------------
+
+  -> The fclose() function is used to close an open file.
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+17] HANDLING EMAIL :-
+
+
+17.  Explain how to send emails in PHP using the mail() function and the importance of validating email addresses.
+=> 
+	----------------------------|| MAIL() FUNCTION ||--------------------------
+
+  -> PHP provides a built-in mail() function that allows sending emails directly from a PHP script.
+  -> It is commonly used for contact forms, notifications, password recovery, etc.
+  -> Syntax of mail() function : mail(to, subject, message, headers);
+
+
+	---------------------------|| IMPORTANCE OF VALIDATION EMAIL ADDRESS ||---------------------------------
+
+  -> Prevents Invalid Emails
+  -> Prevents Invalid Emails
+  -> Improves Security
+  -> Better User Experience
+  -> Improves Email Deliverability
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+18] MVC ARCHITECTURE :-
+
+18.  Discuss the Model-View-Controller(MVC) architecture and its advantages in web development.
+=> 
+	-------------------|| MODEL-VIEW-CONTROLLER(MVC) ||--------------------------
+
+  -> The Model–View–Controller (MVC) architecture is a software design pattern commonly used in web development to separate an application into three interconnected components.
+  -> Componants of mvc : 
+	1) Model : The Model represents the data and business logic of the application.
+	2) View : The View is responsible for the presentation layer.
+	3) Controller : The Controller acts as a bridge between Model and View.
+
+	-----------------------|| ADVANTAGES ||---------------------------------
+
+  -> Separation of Concerns
+  -> Improved Maintainability
+  -> Reusability
+  -> Faster Development
+  -> Scalability
+  -> Better Testing
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------	
+
+19] CONNECTION WITH MYSQL DATABASE :-
+
+19.  Explain how to connect PHP to a MySQL database using mysqli or PDO.
+=> 
+	---------------------------|| CONNECTION ||------------------------------
+
+  -> PHP can connect to a MySQL database using two main extensions:
+	1) MySQLi (MySQL Improved)
+	2) PDO (PHP Data Objects)
+
+	----------------------------|| CONNECTION USING MYSQLI ||-----------------------------------
+ 
+  -> MySQLi supports procedural and object-oriented styles.
+
+
+	----------------------------|| CONNECTION USING PDO ||-----------------------------
+
+  -> PDO provides a uniform interface to connect with multiple databases and supports prepared statements.
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+20] SQL INJECTION :-
+
+20.  Define SQL injection and its implications on security.
+=> 
+	--------------------------|| SQL INJECTION ||--------------------------------------
+
+  -> SQL Injection is a security vulnerability that occurs when an attacker inserts malicious SQL code into a database query through user input (such as forms, URLs, or cookies).
+  -> This happens when input data is not properly validated or sanitized before being used in SQL statements.
+
+
+	------------------------------|| IMPLICATIONS ||----------------------------------------
+
+  -> Unauthorized Access
+  -> Data Theft
+  -> Data Manipulation
+  -> Database Damage
+  -> Privilege Escalation
+  -> Application Takeover
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+21] SESSION AND COOKIES :-
+
+21.  Explain the differences between sessions and cookies in PHP.
+=>
+	Feature                 	Sessions	               				Cookies
+Storage location                	Server                   				Client (Browser)
+Security				More secure						Less secure
+Data size				Large							Small (≈4KB)
+Expiration				Until browser closes (default)				Custom expiry
+Data access				Server-side						Client-side
+Performance				Uses server memory					No server memory
+Dependency				Uses cookies to store session ID			Independent
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+22] FILE UPLOAD :- 
+
+22.  Discuss file upload functionality in PHP and its security implications.
+=> 
+	-----------------------|| FILE UPLOAD FUNCTIONALITY ||------------------------
+
+  -> File upload in PHP allows users to upload files (images, documents, etc.) from a web form to the server.
+  -> It is commonly used in profile uploads, document submission systems, and content management systems.
+
+	------------------------|| SECURITY IMPLICATION ||--------------------------------
+
+  -> Malicious File Uploads
+  -> File Overwriting
+  -> Large File Attacks
+  -> MIME Type Spoofing
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
