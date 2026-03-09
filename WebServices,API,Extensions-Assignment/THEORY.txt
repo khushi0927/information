@@ -1,0 +1,209 @@
+-----------------------------------------------------------WEBSERVICES,API,EXTENSION-----------------------------------------------------------
+
+1] PAYMENT GATEWAY INTEGRATION
+ 
+
+1. OBJECTIVE : 
+	
+  1) Understand the concept and importance of payment gateways in e-commerce.
+  => 
+	------------------------------------|| CONCEPT ||--------------------------------------------------
+
+  -> Payment Gateway Integration is connects your website to a payment processor (like Stripe, Razorpay) using APIs,
+     letting customers pay securely with cards/wallets.
+  -> It Is allowing your site to accept online payments without handling sensitive card data directly, reducing PCI 
+     compliance burden. 
+
+	----------------------------------|| IMPORTANCE ||-------------------------------------------------------------------------
+
+  -> Security & Trust
+  -> Customer Convience
+  -> Increased sales
+  -> Global Reach
+  -> Automation 
+  -> streamlined proccess
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. QUESTIONS :
+
+  1)  Explain the role of payment gateways in online transactions.
+  =>
+
+	-------------------------------|| ROLE ||----------------------------------
+  -> Secure Data Transmission
+  -> Transaction Authorization
+  -> Acts as an intermediatary
+  -> Facilitates Checkout
+
+  2)  Compare and contrast different payment gateway options(e.g.,PayPal,Stripe,Razorpay).
+  => 
+ 	---------------------------|| COMPARE AND CONTRAST DIFFERENT ||----------------------------------
+
+  ->       	| Payment Gateway |                 Market Focus             |               Best For                                                                              |
+		| --------------- | ---------------------------------------- | ----------------------------------------------------- 
+		| **PayPal**      | Global                                   | Freelancers, small businesses selling internationally                                
+		| **Stripe**      | Global & developer-centric               | SaaS, e-commerce platforms, custom payment flows                                     
+		| **Razorpay**    | India-focused with international support | Indian SMEs, UPI-centric merchants                    
+
+
+  3)  Discuss the security measures involved in payment gateway integration
+  => 
+
+	----------------------------|| SECURITY MEASURES ||--------------------------------------------------
+
+  -> Data Encryption
+  -> Tokenization
+  -> Two-Factor Authentication(OTP)
+  -> Fraud Detection & Monitoring
+  -> Secure APIs
+  -> Compliance with Local Regulations
+  -> Regular Security Audits
+  -> Secure Refunds & Chargeback Handling
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2] API WITH HEADER :
+
+1. OBJECTIVE :
+
+  1) : Learn about the significance of headers in API requests and responses.
+  => 
+	---------------------------------------|| SIGNIFICATION ||---------------------------------------------
+
+  -> Content Negotiation
+  -> Authentication & Authorization
+  -> Security
+  -> Caching Control
+  -> Session & State Management
+  -> Rate Limiting & Usage Control
+  -> Error Handling & Status Information
+  -> Cross-Origin Resource Sharing (CORS)
+  -> Custom Metadata
+
+2. QUESTION :
+
+  1)  What are HTTP headers ,and how do they facilitate communication between client and server?
+  => 
+	------------------------|| HTTP HEADER ||-------------------------------------
+
+  -> HTTP headers are key–value pairs sent along with an HTTP request or response.
+  -> They carry metadata (information about the data) rather than the actual data itself.
+ 
+	--------------------------|| HOW HTTP HEADER FACILITATES COMMUNICATION BETWEEN CLIENT AND SERVER ||-----------------------------------
+
+  -> Describe the Data Format
+  -> Enable Authentication & Authorization
+  -> Ensure Secure Communication
+  -> Control Caching Behavior
+  -> Maintain Sessions & State
+  -> Support Error Handling
+
+
+  2)  Describe how to set custom headers in an API request.
+  => 
+	-------------------------|| CUSTOM HEADER ||-----------------------------
+
+  -> Custom headers are user-defined HTTP headers added to an API request to pass extra information such as authentication tokens, app version, request IDs, or client metadata.
+  -> Custom headers are non-standard headers created by developers, usually prefixed with X- or meaningful names.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3] API WITH IMAGE UPLOADING 
+
+1. OBJECTIVE :
+
+  1) Understand the process of uploading images through an API.
+  => 
+	------------------------------------|| UPLOAD IMAGE ||----------------------------------------------
+
+  -> Client-Side Image Selection
+  -> Sending Image to API (Request Format)
+  -> API Request Example
+  -> Server-Side Processing
+
+2. QUESTIONS :
+
+  1)  What are the common file formats for images that can be uploaded via API?
+  => 
+	----------------------------------|| UPLOAD IMAGE ||----------------------------------
+
+  -> JPEG / JPG
+  -> PNG
+  -> GIF
+  -> WebP
+  -> SVG
+  -> BMP
+  -> TIFF
+
+  2)  Explain the process of handling file uploads securely in a web application.
+  => 
+	----------------------------------|| SECURE FILE HANDLING ||-------------------------------------
+  
+  -> Use a Secure Upload Method
+  -> Authenticate and Authorize Users
+  -> Validate File Type (Never Trust File Extension)
+  -> Restrict File Size
+  -> Rename Uploaded Files
+  -> Store Files Outside the Web Root
+  -> Disable File Execution
+  -> Implement Proper Error Handling
+  -> Log Upload Activity
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4]  SOAP AND REST APIs :
+
+1. OBJECTIVE :
+
+  1) Differentiate between SOAP and RESTAPI architectures.
+  => 
+
+| Feature                | SOAP (Simple Object Access Protocol) | REST (Representational State Transfer) |
+| ---------------------- | ------------------------------------ | -------------------------------------- |
+|   Type                 | Protocol                             | Architectural style                    |
+|   Data Format          | XML only                             | JSON (most common), XML, HTML, text    |
+|   Communication        | Uses XML-based messaging             | Uses standard HTTP methods             |
+|   Transport Protocol   | HTTP, HTTPS, SMTP, TCP               | Primarily HTTP/HTTPS                   |
+|   State                | Can be stateful or stateless         | Stateless                              |
+|   Performance          | Slower due to heavy XML processing   | Faster and lightweight                 |
+|   Security             | WS-Security (advanced, built-in)     | Relies on HTTPS, OAuth, JWT            |
+|   Ease of Use          | Complex and strict                   | Simple and flexible                    |
+|   Caching              | Not easily cacheable                 | Supports HTTP caching                  |
+|   Error Handling       | Uses SOAP Faults                     | Uses HTTP status codes                 |
+|   Scalability          | Less scalable                        | Highly scalable                        |
+|   Use Case             | Enterprise, banking, payment systems | Web & mobile applications              |
+
+
+
+2. QUESTIONS :
+ 
+  1)  What are the key characteristics of SOAPAPIs.
+  => 
+	-----------------------|| KEY CHARACTERISTIC ||----------------------------------------
+
+  -> Uses PHP SOAP Extension
+  -> WSDL-Based Communication
+  -> XML-Only Data Format
+  -> Strongly Typed Parameters
+  -> Built-in Error Handling
+  -> Stateful or Stateless
+
+
+  2) Describe the principles of RESTfulAPI design.
+  => 
+	-----------------------------|| PRINCIPLES ||-----------------------------------
+ 
+  -> Client–Server Separation
+  -> Stateless Requests
+  -> Resource-Based URLs
+  -> Use HTTP Methods Properly
+  -> Proper HTTP Status Codes
+  -> Input Validation & Sanitization
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ 
